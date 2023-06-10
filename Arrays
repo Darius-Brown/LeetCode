@@ -1,0 +1,54 @@
+my_array = [1,2,3,4,5]
+print('first array',my_array[4])
+
+my_array[1] = 10
+print('operation',my_array[1])
+
+length = len(my_array)
+print(length)
+
+#non iterated
+for element in my_array:
+    print(element)
+
+#iterated
+iterator = iter(my_array)
+next_element = next(iterator)
+print(next_element)
+
+sorted = my_array.sort()
+print(sorted)
+
+#this modifies the original array
+my_array.sort()
+print(my_array)
+my_array.sort(reverse=True)
+print(my_array)
+
+#search array for specific target
+target= 10
+index = my_array.index(target)
+print(index)
+
+#reveals index position if the target
+sorted_array = [1,3,5,10,20]
+import bisect
+index = bisect.bisect_left(sorted_array, target)
+print(index)
+
+#array algorithms for problem solving
+#two pointer technique
+left = 0 
+right = len(my_array) -1
+while left < right: 
+    left += 1
+    right -= 1
+
+#sliding window technique
+window_size = 3
+for i in range(len(my_array) - window_size + 1):
+    window = my_array[i:i + window_size]
+
+prefix_sum = [0]
+for i in range(len(my_array)):
+    prefix_sum.append(prefix_sum[-1] + my_array[i])
